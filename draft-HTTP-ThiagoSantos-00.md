@@ -8,7 +8,7 @@ Expires: Fail 0000
 
 
 
-# Title draft-GRUPO-DE-TRABALHO-NOME-ALUNO-00.txt
+# Title draft-GRUPO-DE-TRABALHO-NOME-ThiagoSANTOS-00.txt
 
 
 ## Status of this Memo
@@ -45,7 +45,7 @@ review these documents carefully, as they describe your rights and restrictions 
 
 
 ## 1. Introduction
-> Este protocolo é uma variação do HTTP para fins de permitir a requisição de geolocalização de um determinado site.
+> Este protocolo é uma variação do HTTP para fins de permitir a requisição de geolocalização de um determinado site.Ele permite a expansçao do protocolo HTTP e o relacionamento entre números IP e localização geográfica.
 
 ## 2. Conventions used in this document
 In examples, "C:" and "S:" indicate lines sent by the client and server respectively.
@@ -56,20 +56,15 @@ In this document, these words will appear with that interpretation   only when i
 In this document, the characters ">>" preceding an indented line(s)   indicates a statement using the key words listed above. This convention aids reviewers in quickly identifying or finding the portions of this RFC covered by these keywords.
 
 ## 3. Section 2 heading as appropriate
->Uma requisição feita a partir do cliente em direção ao servidor desejado deve possuir o determinado formato:
-<metodo> <arquivo desejado + extensão> <versão do HTTP>
-HOST: <url do host>
-GPOS: <nome do dispositivo>
+>Uma requisição feita a partir do cliente em direção ao servidor desejado deve possuir o determinado formato, seguindo a RFC 1712:
 
-A exemplo:
 
 GET index.html HTTP/1.1
-HOST: www.ufs.br
-GPOS: gps
+HOST:www.ufs.br
+GPOS: nome_dispositivo
 
-O servidor, por sua vez, deve retornar uma resposta no seguinte formato:
-
-nome_dispositivo ttl class GPOS longitude latitude altitude
+A resposta do servidor é a seguinte:
+HTTP/1.1 nome_dispositivo ttl class GPOS longitude latitude altitude
 
 ## 4. Security Considerations
 
@@ -95,6 +90,8 @@ Demon Internet Ltd., November 1997.
 
 [RFC2234]	Crocker, D. and Overell, P.(Editors), "Augmented BNF for Syntax Specifications: ABNF", RFC 2234, Internet Mail 
 Consortium and Demon Internet Ltd., November 1997.
+
+[RFC1712] Baldoni, D., 'DNS Encoding of Geographical Location", RFC 1712, November 1994.
 
 ### 7.2. Informative References
 
